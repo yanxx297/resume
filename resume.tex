@@ -84,21 +84,13 @@
       {\small#3}\vspace{-5pt}
 }
 
-\newcommand{\bibSubheadingURL}[3]{
-  \vspace{-1pt}\item[]
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \href{#3}{\textbf{#1}}\\
-      \textit{\small#2}\\
-    \end{tabular*}\vspace{-5pt}
-}
-
 \newcommand{\bibSubheading}[4]{
   \vspace{-1pt}\item[]
       {\small#2},
       \ifx\hfuzz#4\hfuzz
-      \textbf{\small``#1''}      
+      \textbf{\small``#1,''}      
       \else
-      \href{#4}{\small``#1''}
+      \href{#4}{\small``#1,''}
       \fi      
       \small{#3}
     \vspace{-2pt}
@@ -125,6 +117,7 @@
   \href{http://www-users.cs.umn.edu/~yanxx297/}
   {http://www-users.cs.umn.edu/$\sim$yanxx297/}
   & Mobile : +1-651-235-4138 \\
+  \href{https://github.com/yanxx297}{https://github.com/yanxx297}
 \end{tabular*}
 
 
@@ -144,16 +137,14 @@
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------------
-\section{Projects}
+\section{Research Projects}
   \resumeSubHeadingListStart  	
     \projectSubheading{Fast \& Automatic Emulator Testing}{2015 -- 2018}
     {Improve the performance of PokeEMU, an automatic emulator testing tool 
     based on FuzzBALL and KemuFuzzer.}
       \resumeItemListStart
         \normalItem{Modify the automatic test case generator of PokeEMU for better performance.}                
-        \normalItem{Evaluated by testing various versions of QEMU.}
-        \normalItem{Published and presented at VEE 2018.}
-        \normalItem{A \href{http://www-users.cs.umn.edu/~yanxx297/posterFastPokeEMU.pdf}{poster} about this project was presented on University of Minnesota CS\&E's Eleventh Biennial Research Showcase \& Open House}
+        \normalItem{Evaluate the improved PokeEMU by testing different versions of QEMU.}        
       \resumeItemListEnd
 %        
     \projectSubheading{Loop Summarization for Symbolic Execution}{2014 -- present}
@@ -161,8 +152,8 @@
     This project is supported by a grant under DARPA Cyber Grand Challenge 
     program.}
       \resumeItemListStart
-      	\normalItem{Implement a trace based loop summarization algorithm on FuzzBALL, 
-      	a symbolic execution engine written in Ocaml. The original algorithm is described in 
+      	\normalItem{Implement a trace-based loop summarization algorithm on FuzzBALL, 
+      	a symbolic execution engine written in OCaml. The original algorithm is described in 
         ``Automatic Partial Loop Summarization in Dynamic Test Generation''
         (ISSTA 2011) }
         % \normalItem{Build CFG dynamically.}
@@ -170,15 +161,10 @@
         binaries from DARPA Cyber Grand Challenge}
       \resumeItemListEnd    
 % 
-    \projectSubheading{Type Inference from Binary}{2013 -- 2014}
-    {Infer the signedness of variables using static binary analysis.}
-    	\resumeItemListStart
-        	\normalItem{Disassemble binaries and translate to SSA form Vine IR.}
-            \normalItem{Parse debug information using libdwarf.}
-            \normalItem{Based on heuristics and debug information other than 
-            variable types, infer whether the variables are signed or unsigned 
-            using minimum cut.}
-        \resumeItemListEnd
+    \projectSubheading{Binary Based Type Inference}{2013 -- 2014}
+    {Based on heuristics and debug information except variable types, 
+      infer whether the variables are signed or unsigned by computing the minimum
+      cut of the data flow graph between the signed region and the unsigned region.}
   \resumeSubHeadingListEnd
 
 %
@@ -187,14 +173,19 @@
 	\resumeSubHeadingListStart
     	\bibSubheading{Fast PokeEMU: Scaling Generated Instruction Tests Using 
         Aggregation and State Chaining}
-        {Qiuchen Yan, Stephen McCamant}
+        {\textbf{Qiuchen Yan}, Stephen McCamant}
         {The 14th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments (VEE'18)}
         {http://www-users.cs.umn.edu/~yanxx297/vee18-fast-pokeemu.pdf}
-    	\bibSubheading{Conservative Signed/Unsigned Type Inference for Binaries
+    	\bibSubheading{Fast PokeEMU: Scaling Generated Instruction Tests Using 
+      Aggregation and State Chaining}
+        {\textbf{Qiuchen Yan}, Stephen McCamant}
+        {Poster}
+        {http://www-users.cs.umn.edu/~yanxx297/posterFastPokeEMU.pdf}     
+        \bibSubheading{Conservative Signed/Unsigned Type Inference for Binaries
         using Minimum Cut}
-        {Qiuchen Yan, Stephen McCamant}
+        {\textbf{Qiuchen Yan}, Stephen McCamant}
         {Technical report}
-        {https://www.cs.umn.edu/research/technical_reports/view/14-006}        
+        {https://www.cs.umn.edu/research/technical_reports/view/14-006}             
     \resumeSubHeadingListEnd         
 
 %
@@ -203,14 +194,12 @@
   \resumeSubHeadingListStart
   \projectSubheading
       {Graduate Research Asistant, University of Minnesota}{2014 -- present}
-      {Work with Stephen McCamant on several research projects. Collaborate with Pen-Chung Yew's dynamic binary translation group on the emulator testing project.}    
+      {Work with Stephen McCamant on several research projects. 
+      Collaborate with Pen-Chung Yew's dynamic binary translation group on the emulator testing project.}    
     \projectSubheading
       {DARPA Cyber Grand Challenge}{2014 -- 2015}
       {In addition to the loop summarization project, contributed code for 
       FuzzBOMB group in CGC Qualification Event.}  
-    % \projectSubheading
-    %   {University of Minnesota CS\&E's Eleventh Biennial Research Showcase \& Open House}{}
-    %   {Presented the \href{http://www-users.cs.umn.edu/~yanxx297/posterFastPokeEMU.pdf}{poster} about Fast PokeEMU on this event.}  
   \resumeSubHeadingListEnd
   
   
@@ -220,23 +209,48 @@
  \resumeSubHeadingListStart
  	\resumeItem{Programming Languages}
     {C/C++, Python, OCaml, X86 assembly, Javascript, PHP, SQL} 
-    \resumeItem{Systems \& Tools}
-    {Linux, Xed, DWARF, Vine, FuzzBALL(symbolic execution)}
-    \resumeItem{Coursework}
-    {Introduction to Computer Security, Modern Cryptography, Machine Learning}
+  \resumeItem{Systems \& Tools}
+    {Linux, Xed (Intel Pin), DWARF, Vine, FuzzBALL}
+  \resumeItem{Version Control System}{Git}
  \resumeSubHeadingListEnd
 
-% %
-% %--------RELATED COURSEWORK------------
-% \section{Related Coursework}
-%   \resumeSubHeadingListStart
-%     \resumeItem
-%       {Introduction to Computer Security}
-%       {A breadth of knowledge about software security and network security}   
-%     \resumeItem
-%       {Modern Cryptography}
-%       {Introduction to widely used cryptography theories and algorithms}
-%   \resumeSubHeadingListEnd  
+%
+%--------RELATED COURSEWORK------------
+\section{Coursework}
+  \resumeSubHeadingListStart
+    \resumeItem
+      {Introduction to Computer Security}
+      {A breadth of knowledge about software security and network security}   
+    \resumeItem
+      {Modern Cryptography}
+      {Introduction to widely used cryptography theories and algorithms}
+    \resumeItem
+      {Machine Learning}
+      {Introduction to machine learning}      
+    \resumeItem
+      {Security and Privacy in Computing}
+      {A seminar discussing recent papers about security, privacy and cryptography}
+  \resumeSubHeadingListEnd  
 
 %-------------------------------------------
+\section{Academic Projects}
+\resumeSubHeadingListStart  	
+\projectSubheading{Reproduce the Lucky Thirteen attack}{2014}
+{Implemented a timing side channel attack to the TLS protocol. 
+Course project.}
+\projectSubheading{Sybil attack study}{2014}
+{Surveyed about the Sybil attack in online social network and its state-of-art defence approach
+and collected data from real world sybil communities in sina weibo. 
+Course project.}
+\projectSubheading{Encrypted address book}{2012}
+{An Android address book app that can send encrypted contact info via text message. 
+Bachelor final project.}
+\resumeSubHeadingListEnd
+
+%-------------------------------------------
+\section{Service}
+\resumeItemListStart
+\normalItem{Contributed to open source projects (FuzzBALL and PyXed.)}
+\normalItem{Gave guest lectures on security related courses at the University of Minnesota.}
+\resumeItemListEnd
 \end{document}
