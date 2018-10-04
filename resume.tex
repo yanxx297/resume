@@ -30,9 +30,7 @@
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
-
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
@@ -44,19 +42,17 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
+\newcommand{\brief}[2]{
   \item[]\small{
     \textbf{#1}{: #2 \vspace{-2pt}}
   }
 }
-
-\newcommand{\normalItem}[1]{
+\newcommand{\myitem}[1]{
   \item[-]\small{
     { #1 \vspace{-2pt}}
   }
 }
-
-\newcommand{\educationSubheading}[6]{
+\newcommand{\education}[6]{
   \vspace{-1pt}\item[]
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & {\small #2} \\
@@ -67,24 +63,14 @@
       \fi      
     \end{tabular*}\vspace{-5pt}
 }
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item[]
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      {\small#3} & \textit{\small #4} \\      
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\projectSubheading}[3]{
+\newcommand{\project}[3]{
   \vspace{-1pt}\item[]
   \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\small#1} & {\small#2}\\
   \end{tabular*}
       {\small#3}\vspace{-5pt}
 }
-
-\newcommand{\bibSubheading}[4]{
+\newcommand{\bib}[4]{
   \vspace{-1pt}\item[]
       {\small#2},
       \ifx\hfuzz#4\hfuzz
@@ -95,21 +81,15 @@
       \small{#3}
     \vspace{-2pt}
 }
+\newcommand{\content}{\begin{itemize}[leftmargin=0px]}
+\newcommand{\contentend}{\end{itemize}}
+\newcommand{\mylist}{\begin{itemize}[leftmargin=25px,rightmargin=25px]}
+\newcommand{\mylistend}{\end{itemize}\vspace{-5pt}}
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
-
-\renewcommand{\labelitemii}{$\circ$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
-
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{{\Large Qiuchen Yan}} & Email : 
@@ -120,137 +100,154 @@
   \href{https://github.com/yanxx297}{https://github.com/yanxx297}
 \end{tabular*}
 
-
 %-----------EDUCATION-----------------
 \section{Education}
-  \resumeSubHeadingListStart
-    \educationSubheading
+  \content
+    \education
       {University of Minnesota, Twin Cities}{Minneapolis, MN}
       {Ph.D. in Computer Science;  GPA: 3.60}
       {May 2014 -- 2020 (anticipated)}
       {Master of Science in Computer Science;  GPA: 3.625}
       {Sep. 2012 -- May 2014}          
-    \educationSubheading
+    \education
       {Shandong University of Science and Technology}{Qingdao, China}
       {Bachelor of Engineering in Computer Science;  GPA: 3.65}
       {Sep. 2008 -- July 2012}{}{}
-  \resumeSubHeadingListEnd
+  \contentend
 
 %-----------PROJECTS-----------------
 \section{Research Projects}
-  \resumeSubHeadingListStart  	
-    \projectSubheading{Fast \& Automatic Emulator Testing}{2015 -- 2018}
-    {Improve the performance of PokeEMU, an automatic emulator testing tool 
-    based on FuzzBALL and KemuFuzzer.}
-      \resumeItemListStart
-        \normalItem{Modify the automatic test case generator of PokeEMU for better performance.}                
-        \normalItem{Evaluate the improved PokeEMU by testing different versions of QEMU.}        
-      \resumeItemListEnd
-%        
-    \projectSubheading{Loop Summarization for Symbolic Execution}{2014 -- present}
-    {Implement loop summarization algorithm on FuzzBALL as a countermeasure of the path explosion problem.
-    This project is supported by a grant under DARPA Cyber Grand Challenge 
-    program.}
-      \resumeItemListStart
-      	\normalItem{Implement a trace-based loop summarization algorithm on FuzzBALL, 
-      	a symbolic execution engine written in OCaml. The original algorithm is described in 
-        ``Automatic Partial Loop Summarization in Dynamic Test Generation''
-        (ISSTA 2011) }
-        % \normalItem{Build CFG dynamically.}
-        \normalItem{Evaluate the loop summarization algorithm using competition
-        binaries from DARPA Cyber Grand Challenge}
-      \resumeItemListEnd    
-% 
-    \projectSubheading{Binary Based Type Inference}{2013 -- 2014}
-    {Based on heuristics and debug information except variable types, 
-      infer whether the variables are signed or unsigned by computing the minimum
-      cut of the data flow graph between the signed region and the unsigned region.}
-  \resumeSubHeadingListEnd
+  \content  	
+    \project
+      {Fast \& Automatic Emulator Testing System}{2015 -- 2018}{}
+    \mylist
+        \myitem
+          {Speed up an automatic emulator testing tool by 200 times by designing and
+          implementing a novel approach to generate test cases.}
+        \myitem{
+          Write Python code that generate x86 assembly test cases.
+          Also modified other components of the testing system written in C++.
+        }
+      \mylistend         
+    \project
+      {Loop Summarization for Symbolic Execution}{2014 -- 2015, 2018 -- present}{}  
+      \mylist
+        \myitem{
+          As a countermeasure of the path explosion problem, 
+          design a extended version of a trace-based loop summarization algorithm\cite{Godefroid2011}
+          and implement it on FuzzBALL, a symbolic execution platform.
+        }   
+        \myitem{
+          Still under progress.
+          Currently consists of approximately 1300 lines of code in OCaml.
+        }
+      \mylistend          
+    \project
+      {Binary Level Type Inference}{2013 -- 2014}{}
+      \mylist
+        \myitem
+          {Design a binary level type inference tool that can infer 
+          the signedness of variables with 96\% true positive.}        
+        \myitem{
+          Build this tool on top of Vine and libdwarf using C++.
+        }
+      \mylistend    
+  \contentend
 
 %
 %--------PUBLICATION------------
 \section{Publication}
-	\resumeSubHeadingListStart
-    	\bibSubheading{Fast PokeEMU: Scaling Generated Instruction Tests Using 
-        Aggregation and State Chaining}
-        {\textbf{Qiuchen Yan}, Stephen McCamant}
-        {The 14th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments (VEE'18)}
-        {http://www-users.cs.umn.edu/~yanxx297/vee18-fast-pokeemu.pdf}
-    	\bibSubheading{Fast PokeEMU: Scaling Generated Instruction Tests Using 
+	\content
+    \bib
+      {Fast PokeEMU: Scaling Generated Instruction Tests Using 
       Aggregation and State Chaining}
-        {\textbf{Qiuchen Yan}, Stephen McCamant}
-        {Poster}
-        {http://www-users.cs.umn.edu/~yanxx297/posterFastPokeEMU.pdf}     
-        \bibSubheading{Conservative Signed/Unsigned Type Inference for Binaries
-        using Minimum Cut}
-        {\textbf{Qiuchen Yan}, Stephen McCamant}
-        {Technical report}
-        {https://www.cs.umn.edu/research/technical_reports/view/14-006}             
-    \resumeSubHeadingListEnd         
+      {\textbf{Qiuchen Yan}, Stephen McCamant}
+      {The 14th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments (VEE'18)}
+      {http://www-users.cs.umn.edu/~yanxx297/vee18-fast-pokeemu.pdf}
+    \bib
+      {Fast PokeEMU: Scaling Generated Instruction Tests Using 
+      Aggregation and State Chaining}
+      {\textbf{Qiuchen Yan}, Stephen McCamant}
+      {Poster}
+      {http://www-users.cs.umn.edu/~yanxx297/posterFastPokeEMU.pdf}     
+    \bib
+      {Conservative Signed/Unsigned Type Inference for Binaries
+      using Minimum Cut}
+      {\textbf{Qiuchen Yan}, Stephen McCamant}
+      {Technical report}
+      {https://www.cs.umn.edu/research/technical_reports/view/14-006}             
+  \contentend         
 
 %
 %--------EXPERIENCE------------
 \section{Experience}
-  \resumeSubHeadingListStart
-  \projectSubheading
+  \content
+  \project
       {Graduate Research Asistant, University of Minnesota}{2014 -- present}
       {Work with Stephen McCamant on several research projects. 
       Collaborate with Pen-Chung Yew's dynamic binary translation group on the emulator testing project.}    
-    \projectSubheading
+    \project
       {DARPA Cyber Grand Challenge}{2014 -- 2015}
-      {In addition to the loop summarization project, contributed code for 
-      FuzzBOMB group in CGC Qualification Event.}  
-  \resumeSubHeadingListEnd
+      {Contributed bug checking code for FuzzBOMB group in CGC Qualification Event.}  
+  \contentend
   
   
 %
 %--------PROGRAMMING SKILLS------------
 \section{Skills}	
- \resumeSubHeadingListStart
- 	\resumeItem{Programming Languages}
+ \content
+  \brief
+    {Programming Languages}
     {C/C++, Python, OCaml, X86 assembly, Javascript, PHP, SQL} 
-  \resumeItem{Systems \& Tools}
+  \brief
+    {Systems \& Tools}
     {Linux, Xed (Intel Pin), DWARF, Vine, FuzzBALL}
-  \resumeItem{Version Control System}{Git}
- \resumeSubHeadingListEnd
+  \brief
+    {Version Control System}{Git}
+ \contentend
 
 %
 %--------RELATED COURSEWORK------------
 \section{Coursework}
-  \resumeSubHeadingListStart
-    \resumeItem
+  \content
+    \brief
       {Introduction to Computer Security}
       {A breadth of knowledge about software security and network security}   
-    \resumeItem
+    \brief
       {Modern Cryptography}
       {Introduction to widely used cryptography theories and algorithms}
-    \resumeItem
+    \brief
       {Machine Learning}
       {Introduction to machine learning}      
-    \resumeItem
+    \brief
       {Security and Privacy in Computing}
       {A seminar discussing recent papers about security, privacy and cryptography}
-  \resumeSubHeadingListEnd  
+  \contentend  
 
 %-------------------------------------------
 \section{Academic Projects}
-\resumeSubHeadingListStart  	
-\projectSubheading{Reproduce the Lucky Thirteen attack}{2014}
-{Implemented a timing side channel attack to the TLS protocol. 
-Course project.}
-\projectSubheading{Sybil attack study}{2014}
-{Surveyed about the Sybil attack in online social network and its state-of-art defence approach
-and collected data from real world sybil communities in sina weibo. 
-Course project.}
-\projectSubheading{Encrypted address book}{2012}
-{An Android address book app that can send encrypted contact info via text message. 
-Bachelor final project.}
-\resumeSubHeadingListEnd
+  \content  	
+    \project
+      {Reproduce the Lucky Thirteen attack}{2014}
+      {Implemented a timing side channel attack to the TLS protocol. 
+    Course project.}
+    \project
+      {Sybil attack study}{2014}
+      {Surveyed about the Sybil attack in online social network and its state-of-art defence approach
+      and collected data from real world sybil communities in sina weibo. Course project.}
+    \project
+      {Encrypted address book}{2012}
+      {An Android address book app that can send encrypted contact info via text message. 
+      Bachelor final project.}
+  \contentend
 
 %-------------------------------------------
 \section{Service}
-\resumeItemListStart
-\normalItem{Contributed to open source projects (FuzzBALL and PyXed.)}
-\normalItem{Gave guest lectures on security related courses at the University of Minnesota.}
-\resumeItemListEnd
+\mylist
+\myitem{Contribut code to FuzzBALL, an open source symbolic execution tool.}
+\myitem{Gave guest lectures on security related courses at the University of Minnesota.}
+\mylistend
+
+\bibliographystyle{unsrt}
+\bibliography{ref}
 \end{document}
