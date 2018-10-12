@@ -25,10 +25,10 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.375in}
-\addtolength{\evensidemargin}{-0.375in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
+\addtolength{\oddsidemargin}{-0.125in}
+\addtolength{\evensidemargin}{-0.125in}
+% \addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.3in}
 \addtolength{\textheight}{1.0in}
 \urlstyle{same}
 \raggedbottom
@@ -115,8 +115,33 @@
       {Sep. 2008 -- July 2012}{}{}
   \contentend
 
+%
+%--------PROGRAMMING SKILLS------------
+\section{Skills}	
+ \content
+  \brief
+    {Programming Languages}
+    {C/C++, Python, OCaml, X86 assembly, Javascript, PHP, SQL} 
+  \brief
+    {Systems \& Tools}
+    {Linux, Xed (Intel Pin), DWARF, Vine, FuzzBALL}
+ \contentend
+
+%
+%--------EXPERIENCE------------
+\section{Experience}
+  \content
+  \project
+      {Graduate Research Asistant, University of Minnesota}{2014 -- present}
+      {Work with Stephen McCamant on several research projects. 
+      Collaborate with Pen-Chung Yew's dynamic binary translation group on projects related to emulator testing.}    
+    \project
+      {DARPA Cyber Grand Challenge}{2014 -- 2015}
+      {Contribute bug checking code for the FuzzBOMB group in CGC Qualification Event.}  
+  \contentend
+
 %-----------PROJECTS-----------------
-\section{Research Projects}
+\section{Projects}
   \content  	
     \project
       {Fast \& Automatic Emulator Testing System}{2015 -- 2018}{}
@@ -125,7 +150,7 @@
           {Speed up an automatic emulator testing tool by 200 times by designing and
           implementing a novel approach to generate test cases.}
         \myitem{
-          Implemented a x86 assembly test cases generator in Python based on previous work.
+          Implement an x86 assembly test case generator in Python based on the previous work.
           Also modified other components of the testing system written in C++.
         }
       \mylistend         
@@ -150,7 +175,28 @@
         \myitem{
           Build this tool on top of Vine and libdwarf using C++.
         }
-      \mylistend    
+      \mylistend       
+    \project
+    {Reproduce the Lucky Thirteen attack}{2014}{}
+    \mylist
+      \myitem{
+        Implement a timing side channel attack \cite{AlFardan2013} to the TLS protocol. 
+        (Course project)}
+    \mylistend
+    \project
+      {Sybil attack study}{2014}{}
+      \mylist
+        \myitem{
+          Survey about the Sybil attack in online social network and its state-of-art defence approach      
+          and collected data from real world sybil communities in sina weibo. (Course project)}
+      \mylistend
+    \project
+      {Encrypted address book}{2012}{}
+      \mylist
+        \myitem{
+          Design and implement an Android address book app that can send encrypted contact info via text message. 
+          (Bachelor final project)}
+        \mylistend      
   \contentend
 
 %
@@ -176,34 +222,13 @@
       {Technical report}
       {https://www.cs.umn.edu/research/technical_reports/view/14-006}             
   \contentend         
-
-%
-%--------EXPERIENCE------------
-\section{Experience}
-  \content
-  \project
-      {Graduate Research Asistant, University of Minnesota}{2014 -- present}
-      {Work with Stephen McCamant on several research projects. 
-      Collaborate with Pen-Chung Yew's dynamic binary translation group on the emulator testing project.}    
-    \project
-      {DARPA Cyber Grand Challenge}{2014 -- 2015}
-      {Contributed bug checking code for FuzzBOMB group in CGC Qualification Event.}  
-  \contentend
-  
-  
-%
-%--------PROGRAMMING SKILLS------------
-\section{Skills}	
- \content
-  \brief
-    {Programming Languages}
-    {C/C++, Python, OCaml, X86 assembly, Javascript, PHP, SQL} 
-  \brief
-    {Systems \& Tools}
-    {Linux, Xed (Intel Pin), DWARF, Vine, FuzzBALL}
-  \brief
-    {Version Control System}{Git}
- \contentend
+%-------------------------------------------
+\section{Service}
+\mylist
+\myitem{Contribute code to FuzzBALL, an open source symbolic execution tool.}
+\myitem{Present my work on The 14th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments (VEE'18)}
+\myitem{Give guest lectures on security related courses at the University of Minnesota.}
+\mylistend
 
 %
 %--------RELATED COURSEWORK------------
@@ -222,30 +247,6 @@
       {Security and Privacy in Computing}
       {A seminar discussing recent papers about security, privacy and cryptography}
   \contentend  
-
-%-------------------------------------------
-\section{Academic Projects}
-  \content  	
-    \project
-      {Reproduce the Lucky Thirteen attack}{2014}
-      {Implemented a timing side channel attack to the TLS protocol. 
-    Course project.}
-    \project
-      {Sybil attack study}{2014}
-      {Surveyed about the Sybil attack in online social network and its state-of-art defence approach
-      and collected data from real world sybil communities in sina weibo. Course project.}
-    \project
-      {Encrypted address book}{2012}
-      {An Android address book app that can send encrypted contact info via text message. 
-      Bachelor final project.}
-  \contentend
-
-%-------------------------------------------
-\section{Service}
-\mylist
-\myitem{Contribut code to FuzzBALL, an open source symbolic execution tool.}
-\myitem{Gave guest lectures on security related courses at the University of Minnesota.}
-\mylistend
 
 \bibliographystyle{unsrt}
 \bibliography{ref}
