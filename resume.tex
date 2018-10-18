@@ -121,7 +121,7 @@
  \content
   \brief
     {Programming Languages}
-    {C/C++, Python, OCaml, X86 assembly, Javascript, PHP, SQL} 
+    {C/C++, Python, OCaml, Java, X86 assembly} 
   \brief
     {Systems \& Tools}
     {Linux, Xed (Intel Pin), DWARF, Vine, FuzzBALL}
@@ -141,7 +141,7 @@
   \contentend
 
 %-----------PROJECTS-----------------
-\section{Projects}
+\section{Research Projects}
   \content  	
     \project
       {Fast \& Automatic Emulator Testing System}{2015 -- 2018}{}
@@ -150,7 +150,8 @@
           {Speed up an automatic emulator testing tool by 200 times by designing and
           implementing a novel approach to generate test cases.}
         \myitem{
-          Implement an x86 assembly test case generator in Python based on the previous work.
+          Implement an x86 assembly test case generator based on the previous work.
+          The generator is mostly written in Python.
           Also modified other components of the testing system written in C++.
         }
       \mylistend         
@@ -160,10 +161,11 @@
         \myitem{
           As a countermeasure of the path explosion problem, 
           design a extended version of a trace-based loop summarization algorithm\cite{Godefroid2011}
-          and implement it on FuzzBALL, a symbolic execution platform.
+          and implement it on FuzzBALL, a symbolic execution platform written in OCaml.
         }   
         \myitem{
-          Currently consists of approximately 1300 lines of OCaml code.
+          Evaluate this work with competition
+          binaries from DARPA Cyber Grand Challenge
         }
       \mylistend          
     \project
@@ -176,27 +178,6 @@
           Build this tool on top of Vine and libdwarf using C++.
         }
       \mylistend       
-    \project
-    {Reproduce the Lucky Thirteen attack}{2014}{}
-    \mylist
-      \myitem{
-        Implement a timing side channel attack \cite{AlFardan2013} to the TLS protocol. 
-        (Course project)}
-    \mylistend
-    \project
-      {Sybil attack study}{2014}{}
-      \mylist
-        \myitem{
-          Survey about the Sybil attack in online social network and its state-of-art defence approach      
-          and collected data from real world sybil communities in sina weibo. (Course project)}
-      \mylistend
-    \project
-      {Encrypted address book}{2012}{}
-      \mylist
-        \myitem{
-          Design and implement an Android address book app that can send encrypted contact info via text message. 
-          (Bachelor final project)}
-        \mylistend      
   \contentend
 
 %
@@ -222,6 +203,32 @@
       {Technical report}
       {https://www.cs.umn.edu/research/technical_reports/view/14-006}             
   \contentend         
+
+\section{Academic projects}
+	\content  
+    \project
+    {Reproduce the Lucky Thirteen attack}{2014}{}
+    \mylist
+      \myitem{
+        Implement a timing side channel attack \cite{AlFardan2013} to the TLS protocol. 
+        Course project.}
+    \mylistend
+    \project
+      {Sybil attack study}{2014}{}
+      \mylist
+        \myitem{
+          Survey about the Sybil attack in online social network and its state-of-art defence approach      
+          and collected data from real world sybil communities in sina weibo. 
+          Course project.}
+      \mylistend
+  \project
+    {Encrypted address book for Android}{2012}{}
+    \mylist
+      \myitem{
+        Design and implement an Android address book app that can send encrypted contact info via text message. 
+        Bachelor final project.}
+      \mylistend   
+  \contentend     
 %-------------------------------------------
 \section{Service}
 \mylist
