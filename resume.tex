@@ -16,6 +16,7 @@
 \usepackage{enumitem}
 \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
+\usepackage[bottom=1.3in]{geometry}
 
 
 \pagestyle{fancy}
@@ -124,30 +125,40 @@
     {C/C++, Python, OCaml, Java, X86 assembly} 
   \brief
     {Systems \& Tools}
-    {Linux, Xed (Intel Pin), DWARF, Vine, FuzzBALL}
+    {Linux, FuzzBALL, Xed (Intel Pin), DWARF, Vine}
  \contentend
-
-%
-%--------EXPERIENCE------------
-\section{Experience}
-  \content
-  \project
-      {Graduate Research Asistant, University of Minnesota}{2014 -- present}
-      {Work with Stephen McCamant on several research projects. 
-      Collaborate with Pen-Chung Yew's dynamic binary translation group on projects related to emulator testing.}    
-    \project
-      {DARPA Cyber Grand Challenge}{2014 -- 2015}
-      {Contribute bug checking code for the FuzzBOMB group in CGC Qualification Event.}  
-  \contentend
 
 %-----------PROJECTS-----------------
 \section{Research Projects}
   \content  	
+  \project
+  {Testing Emulators Using Symbolic Execution}{2018 -- present}{}
+  \mylist
+  \myitem{
+    To test the correctness of QEMU, explore it and other emulators with  
+    FuzzBALL (a symbolic execution platform written in OCaml),
+    and perform triangle tests base on the outcoming expressions.
+  }
+  \mylistend
+
+  \project
+  {Loop Summarization for Symbolic Execution}{2014 -- 2015, 2018 -- present}{}  
+  \mylist
+    \myitem{
+      As a countermeasure of the path explosion problem, 
+      design a extended version of a trace-based loop summarization algorithm\cite{Godefroid2011}
+      and implement it on FuzzBALL.
+    }   
+    \myitem{
+      Evaluate this work with competition
+      binaries from DARPA Cyber Grand Challenge
+    }
+  \mylistend       
     \project
       {Fast \& Automatic Emulator Testing System}{2015 -- 2018}{}
     \mylist
         \myitem
-          {Speed up an automatic emulator testing tool by 200 times by designing and
+          {Speed up an automatic emulator testing tool by designing and
           implementing a novel approach to generate test cases.}
         \myitem{
           Implement an x86 assembly test case generator based on the previous work.
@@ -155,19 +166,7 @@
           Also modified other components of the testing system written in C++.
         }
       \mylistend         
-    \project
-      {Loop Summarization for Symbolic Execution}{2014 -- 2015, 2018 -- present}{}  
-      \mylist
-        \myitem{
-          As a countermeasure of the path explosion problem, 
-          design a extended version of a trace-based loop summarization algorithm\cite{Godefroid2011}
-          and implement it on FuzzBALL, a symbolic execution platform written in OCaml.
-        }   
-        \myitem{
-          Evaluate this work with competition
-          binaries from DARPA Cyber Grand Challenge
-        }
-      \mylistend          
+     
     \project
       {Binary Level Type Inference}{2013 -- 2014}{}
       \mylist
@@ -203,6 +202,19 @@
       {Technical report}
       {https://www.cs.umn.edu/research/technical_reports/view/14-006}             
   \contentend         
+
+%
+%--------EXPERIENCE------------
+\section{Experience}
+  \content
+  \project
+      {Graduate Research Asistant, University of Minnesota}{2014 -- present}
+      {Work with Stephen McCamant on several research projects. 
+      Collaborate with Pen-Chung Yew's dynamic binary translation group on projects related to emulator testing.}    
+    \project
+      {DARPA Cyber Grand Challenge}{2014 -- 2015}
+      {Contribute vulnerability checking code for the FuzzBOMB group in CGC Qualification Event.}  
+  \contentend
 
 \section{Academic projects}
 	\content  
