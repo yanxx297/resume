@@ -29,7 +29,7 @@
 \addtolength{\oddsidemargin}{-0.125in}
 \addtolength{\evensidemargin}{-0.125in}
 % \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-0.3in}
+\addtolength{\topmargin}{-0.4in}
 \addtolength{\textheight}{1.0in}
 \urlstyle{same}
 \raggedbottom
@@ -122,7 +122,7 @@
  \content
   \brief
     {Programming Languages}
-    {C/C++, Python, OCaml, Java, X86 assembly} 
+    {C/C++, Python, OCaml, Java, SQL, HTML/CSS, X86 assembly} 
   \brief
     {Systems \& Tools}
     {Linux, FuzzBALL, Xed (Intel Pin), DWARF, Vine}
@@ -179,6 +179,33 @@
       \mylistend       
   \contentend
 
+  \section{Academic projects}
+	\content  
+    \project
+    {Reproduce the Lucky Thirteen attack}{2014}{}
+    \mylist
+      \myitem{
+        Implement a timing side channel attack \cite{AlFardan2013} to the TLS protocol. 
+        Course project.}
+    \mylistend
+    \project
+      {Sybil attack study}{2014}{}
+      \mylist
+        \myitem{
+          Survey about the Sybil attack in online social network and its state-of-art defence approach      
+          and collected data from real world sybil communities in sina weibo. 
+          Course project.}
+      \mylistend
+  \project
+    {Encrypted address book for Android}{2012}{}
+    \mylist
+      \myitem{
+        Design and implement an Android address book app that can send encrypted contact info via text message.
+        Use SQLite as the backend database.
+        Bachelor final project.}
+      \mylistend   
+  \contentend  
+
 %
 %--------PUBLICATION------------
 \section{Publication}
@@ -216,31 +243,7 @@
       {Contribute vulnerability checking code for the FuzzBOMB group in CGC Qualification Event.}  
   \contentend
 
-\section{Academic projects}
-	\content  
-    \project
-    {Reproduce the Lucky Thirteen attack}{2014}{}
-    \mylist
-      \myitem{
-        Implement a timing side channel attack \cite{AlFardan2013} to the TLS protocol. 
-        Course project.}
-    \mylistend
-    \project
-      {Sybil attack study}{2014}{}
-      \mylist
-        \myitem{
-          Survey about the Sybil attack in online social network and its state-of-art defence approach      
-          and collected data from real world sybil communities in sina weibo. 
-          Course project.}
-      \mylistend
-  \project
-    {Encrypted address book for Android}{2012}{}
-    \mylist
-      \myitem{
-        Design and implement an Android address book app that can send encrypted contact info via text message. 
-        Bachelor final project.}
-      \mylistend   
-  \contentend     
+   
 %-------------------------------------------
 \section{Service}
 \mylist
@@ -248,24 +251,6 @@
 \myitem{Present my work on The 14th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments (VEE'18)}
 \myitem{Give guest lectures on security related courses at the University of Minnesota.}
 \mylistend
-
-%
-%--------RELATED COURSEWORK------------
-\section{Coursework}
-  \content
-    \brief
-      {Introduction to Computer Security}
-      {A breadth of knowledge about software security and network security}   
-    \brief
-      {Modern Cryptography}
-      {Introduction to widely used cryptography theories and algorithms}
-    \brief
-      {Machine Learning}
-      {Introduction to machine learning}      
-    \brief
-      {Security and Privacy in Computing}
-      {A seminar discussing recent papers about security, privacy and cryptography}
-  \contentend  
 
 \bibliographystyle{unsrt}
 \bibliography{ref}
